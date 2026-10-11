@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+:root {
+  --obsidian: #050907;
+  --emerald: #06251d;
+  --emerald-deep: #041a14;
+  --emerald-rich: #0a3328;
+  --gold: #d8a83e;
+  --champagne: #f4d58a;
+  --ivory: #f6ebd0;
+  --chocolate: #28140d;
+  --background: var(--emerald-deep);
+  --foreground: var(--ivory);
+}
+
+@theme inline {
+  --color-obsidian: var(--obsidian);
+  --color-emerald: var(--emerald);
+  --color-emerald-deep: var(--emerald-deep);
+  --color-emerald-rich: var(--emerald-rich);
+  --color-gold: var(--gold);
+  --color-champagne: var(--champagne);
+  --color-ivory: var(--ivory);
+  --color-chocolate: var(--chocolate);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--emerald-deep);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(216, 168, 62, 0.08), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, rgba(6, 37, 29, 0.9), transparent 50%),
+    url("/icons/moroccan-pattern.svg");
+  background-size: auto, auto, 160px 160px;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: center, center, 0 0;
+  color: var(--ivory);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+/*
+  Moroccan pattern for major sections only.
+  Sets background-image only — Tailwind bg-* still controls background-color,
+  so borders/dividers and opacity utilities keep working.
+*/
+.moroccan-surface {
+  background-image: url("/icons/moroccan-pattern.svg");
+  background-size: 160px 160px;
+  background-repeat: repeat;
+  background-position: 0 0;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 45%, transparent);
+  color: var(--ivory);
+}
+
+:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gold-text-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #f4d58a 0%, #d8a83e 45%, #b8892a 100%);
+  color: var(--obsidian);
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+  box-shadow: 0 0 0 1px rgba(244, 213, 138, 0.25);
+}
+
+.btn-gold:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 0 0 1px rgba(244, 213, 138, 0.4);
+}
+
+.gold-frame {
+  border: 1px solid rgba(216, 168, 62, 0.45);
+  box-shadow:
+    inset 0 0 0 1px rgba(244, 213, 138, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.gold-frame-shine:hover {
+  box-shadow:
+    inset 0 0 0 1px rgba(244, 213, 138, 0.18),
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(216, 168, 62, 0.22);
+}
+
+.text-gold-shine {
+  background: linear-gradient(
+    90deg,
+    #a87b22 0%,
+    #f4d58a 25%,
+    #d8a83e 50%,
+    #f7e2a1 75%,
+    #a87b22 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-text-shine 5s linear infinite;
+}
+
+.chat-fab-glow {
+  box-shadow:
+    0 0 0 1px rgba(216, 168, 62, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.velvet-panel {
+  background:
+    linear-gradient(180deg, rgba(10, 51, 40, 0.95), rgba(4, 26, 20, 0.98));
+}
+
+.arch-frame {
+  clip-path: ellipse(78% 100% at 50% 100%);
+  border-radius: 999px 999px 18px 18px / 55% 55% 18px 18px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .text-gold-shine {
+    animation: none !important;
+    color: var(--gold);
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+}

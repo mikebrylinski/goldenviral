@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <!-- Classic Moroccan quatrefoil / interlocking arch tile -->
+  <g stroke="#D8A83E" stroke-width="0.8" opacity="0.08" fill="none">
+    <!-- Quatrefoil center -->
+    <path d="M60 28
+      C72 28 78 40 78 48
+      C86 42 98 42 98 60
+      C98 78 86 78 78 72
+      C78 80 72 92 60 92
+      C48 92 42 80 42 72
+      C34 78 22 78 22 60
+      C22 42 34 42 42 48
+      C42 40 48 28 60 28 Z"/>
+    <!-- Inner diamond -->
+    <path d="M60 42 L74 60 L60 78 L46 60 Z"/>
+    <!-- Corner arches -->
+    <path d="M0 0 Q20 0 20 20 Q0 20 0 0"/>
+    <path d="M120 0 Q100 0 100 20 Q120 20 120 0"/>
+    <path d="M0 120 Q20 120 20 100 Q0 100 0 120"/>
+    <path d="M120 120 Q100 120 100 100 Q120 100 120 120"/>
+    <!-- Grid guides -->
+    <path d="M60 0 V18 M60 102 V120 M0 60 H18 M102 60 H120"/>
+    <circle cx="60" cy="60" r="3.5"/>
+  </g>
+</svg>
