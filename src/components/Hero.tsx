@@ -36,12 +36,9 @@ export function Hero() {
           />
 
           <div className="relative flex flex-col items-center justify-center p-6 text-center sm:p-8 md:items-start md:text-left lg:p-12 xl:p-14">
-            <p className="text-xs tracking-[0.28em] text-gold-shine uppercase">
-              Playful Dubai Chocolate
-            </p>
             <h1
               id="hero-heading"
-              className="mt-4 font-serif text-4xl leading-[1.08] text-ivory sm:text-5xl lg:text-[3.4rem]"
+              className="font-serif text-4xl leading-[1.08] text-ivory uppercase sm:text-5xl lg:text-[3.4rem]"
             >
               A Taste of Dubai in Every Bite.
             </h1>
@@ -85,23 +82,25 @@ export function Hero() {
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-6 text-center sm:p-8 md:items-start md:text-left">
-              <p className="text-[0.65rem] tracking-[0.18em] text-champagne/85 uppercase">
-                Featured Creation
-              </p>
-              <p className="mt-2 font-serif text-2xl text-gold sm:text-3xl">
-                {featured.name}
-              </p>
-              <p className="mt-1 text-[0.7rem] tracking-[0.14em] text-ivory/70 uppercase">
-                {featured.subtitle}
-              </p>
-              <p className="mt-3 font-serif text-xl text-champagne">
-                {formatPrice(featured.priceUSD)}
-              </p>
-              <span className="btn-gold mt-5 inline-flex min-h-12 items-center px-8 text-sm font-bold tracking-[0.18em] uppercase sm:min-h-14 sm:px-10 sm:text-base">
-                View Product →
-              </span>
+            <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8">
+              <div className="flex flex-col items-center border border-gold/35 bg-obsidian/80 px-5 py-5 text-center backdrop-blur-md sm:px-6 sm:py-6 md:items-start md:text-left">
+                <p className="text-[0.65rem] tracking-[0.18em] text-champagne/85 uppercase">
+                  Featured Creation
+                </p>
+                <p className="mt-2 font-serif text-2xl text-gold sm:text-3xl">
+                  {featured.name}
+                </p>
+                <p className="mt-1 text-[0.7rem] tracking-[0.14em] text-ivory/70 uppercase">
+                  {featured.subtitle}
+                </p>
+                <p className="mt-3 font-serif text-xl text-champagne">
+                  {formatPrice(featured.priceUSD)}
+                </p>
+                <span className="btn-gold mt-5 inline-flex min-h-12 items-center px-8 text-sm font-bold tracking-[0.18em] uppercase sm:min-h-14 sm:px-10 sm:text-base">
+                  View Product →
+                </span>
+              </div>
             </div>
           </Link>
           </div>

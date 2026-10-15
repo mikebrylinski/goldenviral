@@ -11,6 +11,7 @@ import { Newsletter } from "@/components/Newsletter";
 import { OurStory } from "@/components/OurStory";
 import { ProductGrid } from "@/components/ProductGrid";
 import { SearchDialog } from "@/components/SearchDialog";
+import { Testimonials } from "@/components/Testimonials";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <ProductGrid />
         <InstagramFeed />
         <BrandValues />
+        <Testimonials />
         <OurStory />
         <Fundraising />
         <Newsletter />

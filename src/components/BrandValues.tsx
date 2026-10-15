@@ -1,27 +1,32 @@
 "use client";
 
-import { Heart, Package, Sparkles, Truck } from "lucide-react";
+import {
+  DirectIcon,
+  ExperienceIcon,
+  PackagingIcon,
+  ShippingIcon,
+} from "@/components/BrandIcons";
 import { FREE_SHIPPING_THRESHOLD_USD } from "@/lib/shipping";
 import { useReveal } from "@/hooks/useReveal";
 
 const VALUES = [
   {
-    icon: Truck,
+    icon: ShippingIcon,
     title: `Free US shipping over $${FREE_SHIPPING_THRESHOLD_USD}`,
     copy: "Complimentary shipping on qualifying orders within the United States.",
   },
   {
-    icon: Sparkles,
+    icon: DirectIcon,
     title: "Straight to consumer",
     copy: "We sell direct for better prices—premium chocolate without the middleman markup.",
   },
   {
-    icon: Package,
+    icon: PackagingIcon,
     title: "Thoughtful packaging",
     copy: "Emerald and gold details for a premium unboxing.",
   },
   {
-    icon: Heart,
+    icon: ExperienceIcon,
     title: "A memorable experience",
     copy: "Chocolate moments made to share and savor.",
   },
@@ -40,14 +45,14 @@ export function BrandValues() {
         {VALUES.map(({ icon: Icon, title, copy }, index) => (
           <div
             key={title}
-            className={`flex gap-4 lg:px-6 ${
+            className={`flex flex-col items-center gap-3 text-center lg:flex-row lg:items-start lg:gap-4 lg:px-6 lg:text-left ${
               index < VALUES.length - 1
                 ? "lg:border-r lg:border-gold/30"
                 : ""
             }`}
           >
-            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center border border-gold/40 text-gold">
-              <Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-gold/45 bg-obsidian/35 text-gold shadow-[inset_0_0_0_1px_rgba(244,213,138,0.08)] lg:mt-0.5">
+              <Icon className="h-7 w-7" />
             </div>
             <div>
               <h3 className="text-xs tracking-[0.18em] text-gold uppercase">

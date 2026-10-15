@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../../src/**/*.{js,ts,jsx,tsx}";
+@source "../../public/**/*.{js,ts,jsx,tsx,html}";
 
 :root {
   --obsidian: #050907;
@@ -110,6 +112,141 @@ body {
   }
 }
 
+@keyframes logo-badge-glow {
+  0%,
+  100% {
+    border-color: rgba(216, 168, 62, 0.45);
+    box-shadow:
+      inset 0 0 0 1px rgba(244, 213, 138, 0.1),
+      0 0 0 0 rgba(216, 168, 62, 0);
+  }
+  50% {
+    border-color: rgba(244, 213, 138, 0.75);
+    box-shadow:
+      inset 0 0 0 1px rgba(244, 213, 138, 0.22),
+      0 0 18px rgba(216, 168, 62, 0.28);
+  }
+}
+
+@keyframes logo-mascot-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.logo-badge {
+  animation: logo-badge-glow 7s ease-in-out infinite;
+}
+
+.logo-mascot {
+  animation: logo-mascot-breathe 6s ease-in-out infinite;
+}
+
+@keyframes pistachio-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(3deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+}
+
+@keyframes pistachio-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+@keyframes pistachio-glow-soft {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(244, 213, 138, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(244, 213, 138, 0.45));
+  }
+}
+
+@keyframes pistachio-blush-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes pistachio-ring-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(216, 168, 62, 0.12),
+      0 0 36px rgba(216, 168, 62, 0.18);
+    border-color: rgba(216, 168, 62, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 14px rgba(216, 168, 62, 0),
+      0 0 48px rgba(244, 213, 138, 0.28);
+    border-color: rgba(244, 213, 138, 0.7);
+    transform: scale(1.02);
+  }
+}
+
+.pistachio-stage {
+  animation: pistachio-ring-pulse 7s ease-in-out infinite;
+}
+
+.pistachio-hero {
+  animation:
+    pistachio-sway 9s ease-in-out infinite,
+    pistachio-glow-soft 6s ease-in-out infinite;
+  overflow: visible;
+  transform-origin: center bottom;
+}
+
+.pistachio-hero .pistachio-arm-left,
+.pistachio-hero .pistachio-arm-right,
+.pistachio-hero .pistachio-body,
+.pistachio-hero .pistachio-legs {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.pistachio-hero .pistachio-arm-left,
+.pistachio-hero .pistachio-arm-right {
+  animation: none;
+}
+
+.pistachio-hero .pistachio-body {
+  animation: pistachio-breathe 5.5s ease-in-out infinite;
+}
+
+.pistachio-hero .pistachio-legs {
+  animation: none;
+}
+
+.pistachio-hero .pistachio-blush {
+  animation: pistachio-blush-pulse 5s ease-in-out infinite;
+}
+
 .animate-fade-up {
   animation: fade-up 0.9s ease-out both;
 }
@@ -205,5 +342,17 @@ body {
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
+  }
+
+  .logo-badge,
+  .logo-mascot,
+  .pistachio-stage,
+  .pistachio-hero,
+  .pistachio-hero .pistachio-arm-left,
+  .pistachio-hero .pistachio-arm-right,
+  .pistachio-hero .pistachio-body,
+  .pistachio-hero .pistachio-legs,
+  .pistachio-hero .pistachio-blush {
+    animation: none !important;
   }
 }

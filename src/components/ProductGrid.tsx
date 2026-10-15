@@ -17,7 +17,7 @@ export function ProductGrid() {
       />
       <div id="flavors" className="absolute top-0" aria-hidden="true" />
       <div className="relative mx-auto w-full max-w-7xl">
-        <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-10 flex flex-col items-center gap-4 text-center sm:mb-14 sm:flex-row sm:items-end sm:justify-between sm:text-left">
           <div>
             <h2
               id="shop-heading"
@@ -32,7 +32,7 @@ export function ProductGrid() {
           <button
             type="button"
             onClick={() => scrollToId("shop")}
-            className="self-start text-xs tracking-[0.22em] text-gold uppercase transition-colors hover:text-champagne sm:self-auto"
+            className="text-xs tracking-[0.22em] text-gold uppercase transition-colors hover:text-champagne"
           >
             Shop All Flavors →
           </button>

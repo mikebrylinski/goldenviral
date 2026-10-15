@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Heart, MessageCircle } from "lucide-react";
-import { InstagramIcon } from "@/components/SocialIcons";
+import { InstagramGlyphIcon } from "@/components/BrandIcons";
 import { useReveal } from "@/hooks/useReveal";
 
 const HANDLE = "@goldenviral";
@@ -77,7 +77,7 @@ export function InstagramFeed() {
       aria-labelledby="instagram-heading"
     >
       <div className="mx-auto w-full max-w-7xl">
-        <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-10 flex flex-col items-center gap-6 text-center sm:flex-row sm:items-end sm:justify-between sm:text-left">
           <div className="max-w-2xl">
             <p className="text-xs tracking-[0.28em] text-gold uppercase">
               On Instagram
@@ -98,9 +98,9 @@ export function InstagramFeed() {
             href="https://instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-3 border border-gold/50 px-5 text-xs font-semibold tracking-[0.16em] text-gold uppercase transition-colors hover:border-gold hover:bg-gold/10"
+            className="inline-flex min-h-11 shrink-0 items-center gap-3 border border-gold/50 px-5 text-xs font-semibold tracking-[0.16em] text-gold uppercase transition-colors hover:border-gold hover:bg-gold/10"
           >
-            <InstagramIcon className="h-4 w-4" />
+            <InstagramGlyphIcon className="h-5 w-5" />
             <span>{HANDLE}</span>
             <span className="text-champagne/80">· Follow</span>
           </a>

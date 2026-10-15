@@ -17,6 +17,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://goldenviral.vercel.app"),
   title: "Golden Viral | Premium Dubai Chocolate",
   description:
     "Discover Golden Viral, a Dubai-inspired chocolate experience featuring bold pistachio, kunafa, and indulgent chocolate creations.",
@@ -42,7 +43,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${manrope.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col text-ivory">
+      <body
+        className="flex min-h-full flex-col text-ivory"
+        suppressHydrationWarning
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

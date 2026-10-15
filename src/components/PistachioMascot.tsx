@@ -1,35 +1,72 @@
 type PistachioMascotProps = {
   className?: string;
   title?: string;
+  animated?: boolean;
+  /** Green face only */
+  faceOnly?: boolean;
+  /** Shell + face, no arms or legs */
+  noLimbs?: boolean;
 };
 
-export function PistachioMascot({
-  className = "",
-  title = "Happy pistachio mascot",
-}: PistachioMascotProps) {
+function PistachioFace() {
   return (
-    <svg
-      viewBox="38 48 124 142"
-      className={className}
-      role="img"
-      aria-label={title}
-      fill="none"
-    >
-      {/* arms */}
-      <path
-        d="M62 118 C48 124, 40 138, 44 152"
-        stroke="#F6EBD0"
-        strokeWidth="3.2"
-        strokeLinecap="round"
+    <>
+      <ellipse
+        cx="100"
+        cy="92"
+        rx="34"
+        ry="42"
+        fill="#7FAF4A"
+        stroke="#06251D"
+        strokeWidth="5"
       />
-      <path
-        d="M138 118 C152 124, 160 138, 156 152"
-        stroke="#F6EBD0"
-        strokeWidth="3.2"
-        strokeLinecap="round"
+      <ellipse cx="86" cy="74" rx="9" ry="14" fill="#F4D58A" opacity="0.55" />
+      <ellipse cx="84" cy="70" rx="3.5" ry="5" fill="#F6EBD0" opacity="0.9" />
+
+      <circle
+        className="pistachio-blush"
+        cx="82"
+        cy="98"
+        r="5.5"
+        fill="#D8A83E"
+        opacity="0.55"
+      />
+      <circle
+        className="pistachio-blush"
+        cx="118"
+        cy="98"
+        r="5.5"
+        fill="#D8A83E"
+        opacity="0.55"
       />
 
-      {/* left shell — champagne */}
+      <g className="pistachio-face">
+        <path
+          d="M86 88 C88 92, 92 92, 94 88"
+          stroke="#06251D"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M106 88 C108 92, 112 92, 114 88"
+          stroke="#06251D"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M96 100 C98 103, 102 103, 104 100"
+          stroke="#06251D"
+          strokeWidth="2.8"
+          strokeLinecap="round"
+        />
+      </g>
+    </>
+  );
+}
+
+function PistachioShellAndFace() {
+  return (
+    <g className="pistachio-body" style={{ transformOrigin: "100px 120px" }}>
       <path
         d="M100 168
            C78 168, 58 148, 54 120
@@ -49,7 +86,6 @@ export function PistachioMascot({
         opacity="0.55"
       />
 
-      {/* right shell — chocolate */}
       <path
         d="M100 168
            C122 168, 142 148, 146 120
@@ -69,58 +105,89 @@ export function PistachioMascot({
         opacity="0.55"
       />
 
-      {/* pistachio body — soft pistachio green with emerald outline */}
-      <ellipse
-        cx="100"
-        cy="92"
-        rx="34"
-        ry="42"
-        fill="#7FAF4A"
-        stroke="#06251D"
-        strokeWidth="5"
-      />
-      <ellipse cx="86" cy="74" rx="9" ry="14" fill="#F4D58A" opacity="0.55" />
-      <ellipse cx="84" cy="70" rx="3.5" ry="5" fill="#F6EBD0" opacity="0.9" />
+      <PistachioFace />
+    </g>
+  );
+}
 
-      {/* blush — warm gold */}
-      <circle cx="82" cy="98" r="5.5" fill="#D8A83E" opacity="0.55" />
-      <circle cx="118" cy="98" r="5.5" fill="#D8A83E" opacity="0.55" />
+export function PistachioMascot({
+  className = "",
+  title = "Happy pistachio mascot",
+  animated = false,
+  faceOnly = false,
+  noLimbs = false,
+}: PistachioMascotProps) {
+  if (faceOnly) {
+    return (
+      <svg
+        viewBox="62 46 76 92"
+        className={className}
+        role="img"
+        aria-label={title}
+        fill="none"
+      >
+        <PistachioFace />
+      </svg>
+    );
+  }
 
-      {/* face — emerald */}
-      <path
-        d="M86 88 C88 92, 92 92, 94 88"
-        stroke="#06251D"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M106 88 C108 92, 112 92, 114 88"
-        stroke="#06251D"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M96 100 C98 103, 102 103, 104 100"
-        stroke="#06251D"
-        strokeWidth="2.8"
-        strokeLinecap="round"
-      />
+  if (noLimbs) {
+    return (
+      <svg
+        viewBox="48 48 104 128"
+        className={className}
+        role="img"
+        aria-label={title}
+        fill="none"
+      >
+        <PistachioShellAndFace />
+      </svg>
+    );
+  }
 
-      {/* legs */}
-      <path
-        d="M92 168 V182"
-        stroke="#F6EBD0"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M108 168 V182"
-        stroke="#F6EBD0"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      <ellipse cx="92" cy="184" rx="5" ry="3.2" fill="#F6EBD0" />
-      <ellipse cx="108" cy="184" rx="5" ry="3.2" fill="#F6EBD0" />
+  return (
+    <svg
+      viewBox="38 48 124 142"
+      className={`${animated ? "pistachio-hero" : ""} ${className}`}
+      role="img"
+      aria-label={title}
+      fill="none"
+    >
+      <g className="pistachio-arm-left" style={{ transformOrigin: "62px 118px" }}>
+        <path
+          d="M62 118 C48 124, 40 138, 44 152"
+          stroke="#F6EBD0"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+      </g>
+      <g className="pistachio-arm-right" style={{ transformOrigin: "138px 118px" }}>
+        <path
+          d="M138 118 C152 124, 160 138, 156 152"
+          stroke="#F6EBD0"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+      </g>
+
+      <PistachioShellAndFace />
+
+      <g className="pistachio-legs" style={{ transformOrigin: "100px 168px" }}>
+        <path
+          d="M92 168 V182"
+          stroke="#F6EBD0"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M108 168 V182"
+          stroke="#F6EBD0"
+          strokeWidth="3.2"
+          strokeLinecap="round"
+        />
+        <ellipse cx="92" cy="184" rx="5" ry="3.2" fill="#F6EBD0" />
+        <ellipse cx="108" cy="184" rx="5" ry="3.2" fill="#F6EBD0" />
+      </g>
     </svg>
   );
 }

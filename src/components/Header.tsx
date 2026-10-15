@@ -140,13 +140,16 @@ export function Header() {
 
       {mobileMenuOpen ? (
         <div className="border-t border-gold/20 py-6 md:hidden">
-          <nav className="mx-auto flex w-full max-w-7xl flex-col gap-4" aria-label="Mobile">
+          <nav
+            className="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 text-center"
+            aria-label="Mobile"
+          >
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
                 type="button"
                 onClick={() => handleNav(link.id)}
-                className="py-2 text-left text-sm tracking-[0.2em] text-gold uppercase"
+                className="py-2 text-sm tracking-[0.2em] text-gold uppercase"
               >
                 {link.label}
               </button>
@@ -157,7 +160,7 @@ export function Header() {
                 closeMobileMenu();
                 openAccount();
               }}
-              className="py-2 text-left text-sm tracking-[0.2em] text-champagne uppercase"
+              className="py-2 text-sm tracking-[0.2em] text-champagne uppercase"
             >
               Account
             </button>

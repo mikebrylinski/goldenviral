@@ -69,7 +69,7 @@ export function Footer() {
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1fr_1fr_1.2fr] lg:gap-10">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-          <Logo />
+          <Logo compact />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/65">
             Premium Dubai-inspired chocolate sold straight to you for better
             prices. Free shipping on US orders over $69.
@@ -120,7 +120,7 @@ export function Footer() {
           className="scroll-mt-24 flex flex-col items-center text-center lg:items-start lg:text-left"
         >
           <h2 className="text-xs tracking-[0.24em] text-gold uppercase">
-            Join Our Newsletter
+            Join Our Mailing List
           </h2>
           <p className="mt-3 max-w-sm text-sm text-ivory/65">
             Be the first to discover new flavors and exclusive drops.
@@ -129,6 +129,7 @@ export function Footer() {
             onSubmit={onSubmit}
             className="mt-5 flex w-full max-w-md flex-col gap-3 sm:flex-row"
             noValidate
+            suppressHydrationWarning
           >
             <label htmlFor="footer-newsletter-email" className="sr-only">
               Email address
@@ -136,7 +137,11 @@ export function Footer() {
             <input
               id="footer-newsletter-email"
               type="email"
-              autoComplete="email"
+              name="mailing-list-email"
+              autoComplete="off"
+              data-1p-ignore
+              data-lpignore="true"
+              data-form-type="other"
               value={email}
               onChange={(event) => {
                 setEmail(event.target.value);
@@ -146,10 +151,12 @@ export function Footer() {
               placeholder="Your email address"
               aria-invalid={Boolean(error)}
               className="min-h-12 flex-1 border border-gold/35 bg-emerald-deep/80 px-4 text-sm text-ivory placeholder:text-ivory/35 focus:border-gold focus:outline-none"
+              suppressHydrationWarning
             />
             <button
               type="submit"
               className="btn-gold min-h-12 px-6 text-xs font-semibold tracking-[0.18em] uppercase"
+              suppressHydrationWarning
             >
               Subscribe
             </button>
