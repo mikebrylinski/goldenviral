@@ -1,0 +1,126 @@
+type PistachioMascotProps = {
+  className?: string;
+  title?: string;
+};
+
+export function PistachioMascot({
+  className = "",
+  title = "Happy pistachio mascot",
+}: PistachioMascotProps) {
+  return (
+    <svg
+      viewBox="38 48 124 142"
+      className={className}
+      role="img"
+      aria-label={title}
+      fill="none"
+    >
+      {/* arms */}
+      <path
+        d="M62 118 C48 124, 40 138, 44 152"
+        stroke="#F6EBD0"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M138 118 C152 124, 160 138, 156 152"
+        stroke="#F6EBD0"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+
+      {/* left shell — champagne */}
+      <path
+        d="M100 168
+           C78 168, 58 148, 54 120
+           C50 94, 58 78, 72 70
+           C82 64, 92 78, 96 98
+           C98 112, 99 140, 100 168 Z"
+        fill="#F4D58A"
+        stroke="#28140D"
+        strokeWidth="5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M70 150 C78 158, 90 162, 98 160"
+        stroke="#D8A83E"
+        strokeWidth="4"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+
+      {/* right shell — chocolate */}
+      <path
+        d="M100 168
+           C122 168, 142 148, 146 120
+           C150 94, 142 78, 128 70
+           C118 64, 108 78, 104 98
+           C102 112, 101 140, 100 168 Z"
+        fill="#28140D"
+        stroke="#050907"
+        strokeWidth="5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M130 88 C136 98, 138 112, 136 128"
+        stroke="#5C3A1E"
+        strokeWidth="5"
+        strokeLinecap="round"
+        opacity="0.55"
+      />
+
+      {/* pistachio body — soft pistachio green with emerald outline */}
+      <ellipse
+        cx="100"
+        cy="92"
+        rx="34"
+        ry="42"
+        fill="#7FAF4A"
+        stroke="#06251D"
+        strokeWidth="5"
+      />
+      <ellipse cx="86" cy="74" rx="9" ry="14" fill="#F4D58A" opacity="0.55" />
+      <ellipse cx="84" cy="70" rx="3.5" ry="5" fill="#F6EBD0" opacity="0.9" />
+
+      {/* blush — warm gold */}
+      <circle cx="82" cy="98" r="5.5" fill="#D8A83E" opacity="0.55" />
+      <circle cx="118" cy="98" r="5.5" fill="#D8A83E" opacity="0.55" />
+
+      {/* face — emerald */}
+      <path
+        d="M86 88 C88 92, 92 92, 94 88"
+        stroke="#06251D"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M106 88 C108 92, 112 92, 114 88"
+        stroke="#06251D"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M96 100 C98 103, 102 103, 104 100"
+        stroke="#06251D"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+      />
+
+      {/* legs */}
+      <path
+        d="M92 168 V182"
+        stroke="#F6EBD0"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M108 168 V182"
+        stroke="#F6EBD0"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+      />
+      <ellipse cx="92" cy="184" rx="5" ry="3.2" fill="#F6EBD0" />
+      <ellipse cx="108" cy="184" rx="5" ry="3.2" fill="#F6EBD0" />
+    </svg>
+  );
+}

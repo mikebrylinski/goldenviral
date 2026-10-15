@@ -38,7 +38,7 @@ export function OurStory() {
       className="moroccan-surface reveal scroll-mt-24 border-t border-gold/25 bg-emerald px-4 py-20 sm:px-6 lg:px-8"
       aria-labelledby="story-heading"
     >
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.1fr_0.85fr] lg:gap-10 xl:gap-14">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[0.95fr_1.1fr_0.85fr] lg:gap-10 xl:gap-14">
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="arch-frame relative aspect-[4/5] overflow-hidden ring-1 ring-gold/50 shadow-[0_30px_70px_rgba(0,0,0,0.45)]">
             <Image
@@ -56,7 +56,7 @@ export function OurStory() {
           />
         </div>
 
-        <div>
+        <div className="text-center lg:text-left">
           <p className="text-xs tracking-[0.3em] text-gold uppercase">
             Our Story
           </p>
@@ -66,7 +66,7 @@ export function OurStory() {
           >
             Bringing the Taste of Dubai to the World.
           </h2>
-          <div className="mt-6 space-y-4 text-sm leading-relaxed text-ivory/80 sm:text-base">
+          <div className="mx-auto mt-6 max-w-xl space-y-4 text-sm leading-relaxed text-ivory/80 sm:text-base lg:mx-0 lg:max-w-none">
             <p>
               Golden Viral brings together the bold flavors of Dubai-inspired
               chocolate and the pleasure of discovering something extraordinary.
@@ -90,8 +90,11 @@ export function OurStory() {
 
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
           {STORY_VALUES.map(({ icon: Icon, title, copy }) => (
-            <li key={title} className="flex gap-4">
-              <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center border border-gold/45 text-gold">
+            <li
+              key={title}
+              className="flex flex-col items-center gap-3 text-center lg:flex-row lg:items-start lg:gap-4 lg:text-left"
+            >
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-gold/45 text-gold lg:mt-0.5">
                 <Icon className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
               </div>
               <div>

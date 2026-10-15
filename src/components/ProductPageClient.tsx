@@ -28,7 +28,8 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
 
   return (
     <div className="moroccan-surface bg-emerald-deep">
-      <div className="mx-auto max-w-7xl px-4 pt-28 pb-10 sm:px-6 lg:px-8">
+      <div className="px-4 pt-28 pb-10 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl">
         <Link
           href="/#shop"
           className="inline-flex items-center gap-2 text-xs tracking-[0.18em] text-champagne uppercase transition-colors hover:text-gold"
@@ -168,6 +169,7 @@ export function ProductPageClient({ product, related }: ProductPageClientProps) 
             </div>
           </section>
         ) : null}
+      </div>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ export function ProductGrid() {
         aria-hidden="true"
       />
       <div id="flavors" className="absolute top-0" aria-hidden="true" />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto w-full max-w-7xl">
         <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2

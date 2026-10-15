@@ -14,6 +14,7 @@ import {
 const FOOTER_LINKS = [
   { href: "#shop", label: "Shop" },
   { href: "#story", label: "Our Story" },
+  { href: "#fundraising", label: "Fundraising" },
   { href: "#contact", label: "Contact" },
   { href: "#privacy", label: "Privacy Policy" },
   { href: "#terms", label: "Terms" },
@@ -56,24 +57,24 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-gold/25 bg-obsidian px-4 pt-16 pb-10 sm:px-6 lg:px-8">
-      <div className="pointer-events-none absolute right-0 bottom-0 w-[min(520px,80vw)] opacity-50">
-        <Image
-          src="/icons/skyline.svg"
-          alt=""
-          width={520}
-          height={130}
-          className="h-auto w-full"
-        />
-      </div>
+      <Image
+        src="/images/bg-palm-products.jpg"
+        alt=""
+        fill
+        className="object-cover object-[center_70%] opacity-35"
+        sizes="100vw"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-obsidian/80" aria-hidden="true" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_1fr_1.2fr] lg:gap-10">
-        <div>
+      <div className="relative mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1fr_1fr_1.2fr] lg:gap-10">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/65">
             Premium Dubai-inspired chocolate sold straight to you for better
             prices. Free shipping on US orders over $69.
           </p>
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+          <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 lg:justify-start">
             {FOOTER_LINKS.map((link) => (
               <li key={`${link.href}-${link.label}`}>
                 <a
@@ -93,11 +94,11 @@ export function Footer() {
           </p>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <h2 className="text-xs tracking-[0.24em] text-gold uppercase">
             Follow Our Journey
           </h2>
-          <div className="mt-5 flex flex-wrap gap-3">
+          <div className="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start">
             {SOCIALS.map(({ label, Icon }) => (
               <a
                 key={label}
@@ -109,21 +110,24 @@ export function Footer() {
               </a>
             ))}
           </div>
-          <p className="mt-4 text-xs text-ivory/45">
+          <p className="mt-4 max-w-xs text-xs text-ivory/45">
             Social links are placeholders until official accounts are provided.
           </p>
         </div>
 
-        <div id="contact" className="scroll-mt-24">
+        <div
+          id="contact"
+          className="scroll-mt-24 flex flex-col items-center text-center lg:items-start lg:text-left"
+        >
           <h2 className="text-xs tracking-[0.24em] text-gold uppercase">
             Join Our Newsletter
           </h2>
-          <p className="mt-3 text-sm text-ivory/65">
+          <p className="mt-3 max-w-sm text-sm text-ivory/65">
             Be the first to discover new flavors and exclusive drops.
           </p>
           <form
             onSubmit={onSubmit}
-            className="mt-5 flex flex-col gap-3 sm:flex-row"
+            className="mt-5 flex w-full max-w-md flex-col gap-3 sm:flex-row"
             noValidate
           >
             <label htmlFor="footer-newsletter-email" className="sr-only">
@@ -164,7 +168,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-14 flex max-w-7xl flex-col gap-2 border-t border-gold/20 pt-6 text-xs text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative mx-auto mt-14 flex w-full max-w-7xl flex-col items-center gap-2 border-t border-gold/20 pt-6 text-center text-xs text-ivory/45 sm:flex-row sm:items-center sm:justify-between sm:text-left">
         <p>© 2026 Golden Viral. All rights reserved.</p>
         <p>Interactive brand demo — not a live storefront.</p>
       </div>

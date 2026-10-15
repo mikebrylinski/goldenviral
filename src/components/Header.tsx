@@ -10,7 +10,7 @@ import { scrollToId } from "@/lib/scroll";
 const NAV_LINKS = [
   { id: "shop", label: "Shop" },
   { id: "story", label: "Our Story" },
-  { id: "flavors", label: "Flavors" },
+  { id: "fundraising", label: "Fundraising" },
   { id: "contact", label: "Contact" },
 ] as const;
 
@@ -55,8 +55,8 @@ export function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/25 bg-black">
-      <div className="mx-auto flex h-[4.75rem] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-gold/25 bg-black px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[4.75rem] w-full max-w-7xl items-center justify-between gap-4">
         <a
           href="#top"
           className="shrink-0"
@@ -139,8 +139,8 @@ export function Header() {
       </div>
 
       {mobileMenuOpen ? (
-        <div className="border-t border-gold/20 bg-black px-4 py-6 md:hidden">
-          <nav className="flex flex-col gap-4" aria-label="Mobile">
+        <div className="border-t border-gold/20 py-6 md:hidden">
+          <nav className="mx-auto flex w-full max-w-7xl flex-col gap-4" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}

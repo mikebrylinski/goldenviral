@@ -36,7 +36,7 @@ export function BrandValues() {
       className="moroccan-surface reveal border-y border-gold/30 bg-emerald-rich px-4 py-11 sm:px-6 lg:px-8"
       aria-label="Brand experience"
     >
-      <div className="mx-auto grid max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+      <div className="mx-auto grid w-full max-w-7xl gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
         {VALUES.map(({ icon: Icon, title, copy }, index) => (
           <div
             key={title}

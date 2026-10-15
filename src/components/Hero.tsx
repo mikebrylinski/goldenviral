@@ -27,16 +27,17 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-emerald-deep/90 via-transparent to-obsidian/35" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_60%,rgba(216,168,62,0.12),transparent_50%)]" />
 
-      <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-7xl items-end px-4 py-10 sm:px-6 sm:py-12 lg:items-center lg:px-8 lg:py-16">
-        <div className="animate-fade-up relative z-10 grid w-full grid-cols-1 overflow-hidden border border-gold/50 bg-black/45 shadow-[0_30px_90px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl md:grid-cols-2">
+      <div className="relative px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="relative mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-7xl items-center">
+          <div className="animate-fade-up relative z-10 grid w-full grid-cols-1 overflow-hidden border border-gold/50 bg-black/45 shadow-[0_30px_90px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-2xl md:grid-cols-2">
           <div
             className="pointer-events-none absolute inset-0 bg-gradient-to-br from-gold/15 via-white/5 to-emerald/20"
             aria-hidden="true"
           />
 
-          <div className="relative flex flex-col justify-center p-6 sm:p-8 lg:p-12 xl:p-14">
-            <p className="text-xs tracking-[0.35em] text-gold-shine uppercase">
-              Premium Dubai Chocolate
+          <div className="relative flex flex-col items-center justify-center p-6 text-center sm:p-8 md:items-start md:text-left lg:p-12 xl:p-14">
+            <p className="text-xs tracking-[0.28em] text-gold-shine uppercase">
+              Playful Dubai Chocolate
             </p>
             <h1
               id="hero-heading"
@@ -45,22 +46,22 @@ export function Hero() {
               A Taste of Dubai in Every Bite.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ivory/85 sm:text-lg">
-              <span className="text-champagne">Rich. Bold. Premium.</span>
+              <span className="text-champagne">Fun. Fresh. Pistachio-happy.</span>
               <br />
-              Pistachio, kunafa, and more—crafted for true chocolate lovers.
+              Kunafa chocolate made to share — and smile about.
             </p>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-champagne/90">
               Sold straight to you for better prices. Free shipping on US orders
               over $69.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:justify-start">
               <button
                 type="button"
                 onClick={() => scrollToId("shop")}
-                className="btn-gold inline-flex min-h-12 items-center px-8 text-xs font-semibold tracking-[0.22em] uppercase"
+                className="btn-gold inline-flex min-h-14 items-center px-10 text-sm font-bold tracking-[0.2em] uppercase sm:min-h-16 sm:px-12 sm:text-base"
               >
-                Shop Now →
+                Buy Now →
               </button>
               <button
                 type="button"
@@ -74,18 +75,18 @@ export function Hero() {
 
           <Link
             href={`/products/${featured.id}`}
-            className="group relative min-h-[280px] border-t border-gold/30 md:min-h-full md:border-t-0 md:border-l"
+            className="relative min-h-[280px] border-t border-gold/30 md:min-h-full md:border-t-0 md:border-l"
           >
             <Image
-              src={featured.image}
-              alt={featured.name}
+              src="/images/lifestyle-packaging-flatlay.jpg"
+              alt={`${featured.name} in emerald packaging — bars, cones, and pistachio cream flat lay`}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-obsidian/20 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <div className="absolute inset-x-0 bottom-0 flex flex-col items-center p-6 text-center sm:p-8 md:items-start md:text-left">
               <p className="text-[0.65rem] tracking-[0.18em] text-champagne/85 uppercase">
                 Featured Creation
               </p>
@@ -98,11 +99,12 @@ export function Hero() {
               <p className="mt-3 font-serif text-xl text-champagne">
                 {formatPrice(featured.priceUSD)}
               </p>
-              <p className="mt-3 text-xs tracking-[0.16em] text-gold uppercase">
+              <span className="btn-gold mt-5 inline-flex min-h-12 items-center px-8 text-sm font-bold tracking-[0.18em] uppercase sm:min-h-14 sm:px-10 sm:text-base">
                 View Product →
-              </p>
+              </span>
             </div>
           </Link>
+          </div>
         </div>
       </div>
 
