@@ -7,7 +7,6 @@ import { Fundraising } from "@/components/Fundraising";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { InstagramFeed } from "@/components/InstagramFeed";
-import { Newsletter } from "@/components/Newsletter";
 import { OurStory } from "@/components/OurStory";
 import { ProductGrid } from "@/components/ProductGrid";
 import { SearchDialog } from "@/components/SearchDialog";
@@ -25,7 +24,6 @@ export default function Home() {
         <Testimonials />
         <OurStory />
         <Fundraising />
-        <Newsletter />
       </main>
       <Footer />
       <CartDrawer />

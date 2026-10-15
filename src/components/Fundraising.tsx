@@ -158,7 +158,7 @@ export function Fundraising() {
           </p>
           <button
             type="button"
-            onClick={() => scrollToId("contact")}
+            onClick={() => scrollToId("mailing-list")}
             className="btn-gold inline-flex min-h-11 items-center px-7 text-xs font-semibold tracking-[0.18em] uppercase"
           >
             Start Fundraising →

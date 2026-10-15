@@ -15,7 +15,6 @@ const FOOTER_LINKS = [
   { href: "#shop", label: "Shop" },
   { href: "#story", label: "Our Story" },
   { href: "#fundraising", label: "Fundraising" },
-  { href: "#contact", label: "Contact" },
   { href: "#privacy", label: "Privacy Policy" },
   { href: "#terms", label: "Terms" },
 ] as const;
@@ -116,7 +115,7 @@ export function Footer() {
         </div>
 
         <div
-          id="contact"
+          id="mailing-list"
           className="scroll-mt-24 flex flex-col items-center text-center lg:items-start lg:text-left"
         >
           <h2 className="text-xs tracking-[0.24em] text-gold uppercase">

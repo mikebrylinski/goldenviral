@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { id: "shop", label: "Shop" },
   { id: "story", label: "Our Story" },
   { id: "fundraising", label: "Fundraising" },
-  { id: "contact", label: "Contact" },
 ] as const;
 
 export function Header() {
